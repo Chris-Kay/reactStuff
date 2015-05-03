@@ -1,0 +1,1 @@
+jsx -w --extension jsx src/ build/

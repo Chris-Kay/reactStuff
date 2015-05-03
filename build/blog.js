@@ -10,23 +10,57 @@
          }
      });
 
+    var Heading = React.createClass({displayName: "Heading",
+        render: function () {
+            return (
+                React.createElement("div", null, 
+                    React.createElement("h1", null, this.props.heading), 
+                    React.createElement("h2", null, this.props.subHeading)
+                )
+            );
+        }
+    });
+
+     var Body = React.createClass({displayName: "Body",
+         render: function () {
+             return (
+                 React.createElement("div", {dangerouslySetInnerHTML: {__html: this.props.body}})
+             );
+         }
+     });
+
      var Card = React.createClass({displayName: "Card",
             render: function () {
-                var imageComponment;
+                var imageComponment,
+                    headingComponment,
+                    bodyComponment;
+
+                if (this.props.post.heading || this.props.post.subHeading) {
+                    headingComponment =
+                        React.createElement(Heading, {heading: this.props.post.heading, 
+                                 subHeading: this.props.post.subHeading}
+                            )
+                }
 
                 if (this.props.post.image && this.props.post.image.figure) {
                     imageComponment =
                         React.createElement(Image, {
                             image: this.props.post.image}
-                        )
+                            )
+                }
+
+                if(this.props.post.body) {
+                    bodyComponment =
+                        React.createElement(Body, {
+                            body: this.props.post.body}
+                            )
                 }
 
                 return (
                 React.createElement("div", null, 
-                    React.createElement("h1", null, this.props.post.heading), 
-                    React.createElement("h2", null, this.props.post.subHeading), 
+                    headingComponment, 
                     imageComponment, 
-                    React.createElement("div", null), 
+                    bodyComponment, 
                     React.createElement("button", {onClick: this.props.onClick}, "Delete Me")
                 )
                 )

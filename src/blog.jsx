@@ -3,32 +3,66 @@
      var Image = React.createClass({
          render: function () {
              return (
-                 <div>
+                 <div className='centered-image'>
                      <img src={this.props.image.figure} width='400px' />
                  </div>
              )
          }
      });
 
+    var Heading = React.createClass({
+        render: function () {
+            return (
+                <div>
+                    <h1>{this.props.heading}</h1>
+                    <h2>{this.props.subHeading}</h2>
+                </div>
+            );
+        }
+    });
+
+     var Body = React.createClass({
+         render: function () {
+             return (
+                 <div dangerouslySetInnerHTML={{__html: this.props.body}} />
+             );
+         }
+     });
+
      var Card = React.createClass({
             render: function () {
-                var imageComponment;
+                var imageComponment,
+                    headingComponment,
+                    bodyComponment;
+
+                if (this.props.post.heading || this.props.post.subHeading) {
+                    headingComponment =
+                        <Heading heading={this.props.post.heading}
+                                 subHeading={this.props.post.subHeading}
+                            />
+                }
 
                 if (this.props.post.image && this.props.post.image.figure) {
                     imageComponment =
                         <Image
                             image ={this.props.post.image}
-                        />
+                            />
+                }
+
+                if(this.props.post.body) {
+                    bodyComponment =
+                        <Body
+                            body={this.props.post.body}
+                            />
                 }
 
                 return (
-                <div>
-                    <h1>{this.props.post.heading}</h1>
-                    <h2>{this.props.post.subHeading}</h2>
+                <article className='blogPost'>
+                    {headingComponment}
                     {imageComponment}
-                    <div></div>
+                    {bodyComponment}
                     <button onClick={this.props.onClick}>Delete Me</button>
-                </div>
+                </article>
                 )
             }
      });

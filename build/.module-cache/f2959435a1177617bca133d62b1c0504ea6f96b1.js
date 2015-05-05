@@ -1,9 +1,27 @@
 define(function (require) {
-  var Image = require('post-items/image'),
-  Heading = require('post-items/heading'),
-  Body = require('post-items/body');
+var Image = require('image'),
+    React = require('react.min');
 
-  return React.createClass({
+    // var Heading = React.createClass({
+    //     render: function () {
+    //         return (
+    //             <div>
+    //                 <h1>{this.props.heading}</h1>
+    //                 <h2>{this.props.subHeading}</h2>
+    //             </div>
+    //         );
+    //     }
+    // });
+    //
+    //  var Body = React.createClass({
+    //      render: function () {
+    //          return (
+    //              <div dangerouslySetInnerHTML={{__html: this.props.body}} />
+    //          );
+    //      }
+    //  });
+
+     return React.createClass({
             render: function () {
                 var imageComponment,
                     headingComponment,
@@ -40,4 +58,4 @@ define(function (require) {
                 )
             }
      });
- });
+   });

@@ -1,5 +1,24 @@
 require(['../react.min', 'posts' ], function (React, Posts) {
 
+    var Heading = React.createClass({displayName: "Heading",
+        render: function () {
+            return (
+                React.createElement("div", null, 
+                    React.createElement("h1", null, this.props.heading), 
+                    React.createElement("h2", null, this.props.subHeading)
+                )
+            );
+        }
+    });
+
+     var Body = React.createClass({displayName: "Body",
+         render: function () {
+             return (
+                 React.createElement("div", {dangerouslySetInnerHTML: {__html: this.props.body}})
+             );
+         }
+     });
+
     var App = React.createClass({displayName: "App",
 
         deletePerson: function (post) {
@@ -19,7 +38,7 @@ require(['../react.min', 'posts' ], function (React, Posts) {
                 React.createElement("div", null, 
                     this.state.blogData.map(function(post) {
                         return (
-                            React.createElement(Posts, {onClick: that.deletePerson.bind(null, post), post: post})
+                            React.createElement(Card, {onClick: that.deletePerson.bind(null, post), post: post})
                         )
                     }, this)
                 )

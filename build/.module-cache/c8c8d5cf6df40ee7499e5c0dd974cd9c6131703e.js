@@ -1,8 +1,7 @@
 define(function (require) {
-  var Image = require('post-items/image'),
-  Heading = require('post-items/heading'),
-  Body = require('post-items/body');
-
+  var Image = require('image'),
+  Heading = require('heading'),
+  Body = require('body');
   return React.createClass({
             render: function () {
                 var imageComponment,

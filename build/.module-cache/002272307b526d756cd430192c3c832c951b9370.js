@@ -1,6 +1,6 @@
 require(['../react.min', 'posts' ], function (React, Posts) {
-
-    var App = React.createClass({
+  
+    var App = React.createClass({displayName: "App",
 
         deletePerson: function (post) {
             this.state.blogData.splice(this.state.blogData.indexOf(post), 1);
@@ -16,16 +16,16 @@ require(['../react.min', 'posts' ], function (React, Posts) {
         render: function () {
             var that = this;
             return (
-                <div>
-                    {this.state.blogData.map(function(post) {
+                React.createElement("div", null, 
+                    this.state.blogData.map(function(post) {
                         return (
-                            <Posts onClick={that.deletePerson.bind(null, post)} post={post}></Posts>
+                            React.createElement(Card, {onClick: that.deletePerson.bind(null, post), post: post})
                         )
-                    }, this)}
-                </div>
+                    }, this)
+                )
             )
         }
     })
 
-React.render(<App blogData={blogData}></App>, document.body);
+React.render(React.createElement(App, {blogData: blogData}), document.body);
 });

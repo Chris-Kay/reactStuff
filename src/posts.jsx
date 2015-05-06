@@ -11,8 +11,8 @@ define(function (require) {
 
                 if (this.props.post.heading || this.props.post.subHeading) {
                     headingComponment =
-                        <Heading heading={this.props.post.heading}
-                                 subHeading={this.props.post.subHeading}
+                        <Heading heading={this.props.post.heading} || ''
+                                 subHeading={this.props.post.subHeading} || ''
                             />
                 }
 

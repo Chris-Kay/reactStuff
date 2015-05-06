@@ -9,10 +9,10 @@ define(function (require) {
                     headingComponment,
                     bodyComponment;
 
-                if (this.props.post.heading || this.props.post.subHeading) {
+                if (this.props.post.heading && this.props.post.subHeading) { //TODO Make this or !!!!
                     headingComponment =
-                        <Heading heading={this.props.post.heading} || ''
-                                 subHeading={this.props.post.subHeading} || ''
+                        <Heading heading={this.props.post.heading}
+                                 subHeading={this.props.post.subHeading}
                             />
                 }
 

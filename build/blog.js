@@ -5,8 +5,7 @@ require(['../react.min', 'posts' ], function (React, Posts) {
         mixins: [ReactFireMixin],
         deletePerson: function (post) {
             this.state.blogData.splice(this.state.blogData.indexOf(post), 1);
-
-            this.setState({blogData: this.state.blogData});
+            this.firebaseRefs.blogData.remove(post);
         },
         getInitialState: function() {
             return {

@@ -4,8 +4,10 @@ require(['../react.min', 'posts' ], function (React, Posts) {
 
         mixins: [ReactFireMixin],
         deletePerson: function (post) {
-            this.state.blogData.splice(this.state.blogData.indexOf(post), 1);
-            this.firebaseRefs.blogData.remove(post);
+
+        var selctedItem = new Firebase('https://brilliant-inferno-9224.firebaseio.com/' + post.assetId);
+        selctedItem.remove();
+
         },
         getInitialState: function() {
             return {

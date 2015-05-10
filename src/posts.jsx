@@ -9,7 +9,7 @@ define(function (require) {
                     headingComponment,
                     bodyComponment;
 
-                if (this.props.post.heading && this.props.post.subHeading) { //TODO Make this or !!!!
+                if (this.props.post.heading || this.props.post.subHeading) {
                     headingComponment =
                         <Heading heading={this.props.post.heading}
                                  subHeading={this.props.post.subHeading}

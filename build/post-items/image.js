@@ -3,7 +3,7 @@ define(function () {
       render: function () {
           return (
               React.createElement("div", {className: "centered-image"}, 
-                  React.createElement("img", {src: this.props.image.figure, width: "400px"})
+                  React.createElement("img", {src: this.props.image, width: "400px"})
               )
           )
       }

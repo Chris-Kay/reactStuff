@@ -1,15 +1,59 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
     <link  rel="stylesheet" href="../css/style.css" type="text/css">
-    <script src="//cdn.firebase.com/js/client/1.0.21/firebase.js"></script>
-    <script src="//cdn.firebase.com/libs/reactfire/0.3.0/reactfire.min.js"></script>
+
     <script src="../react.min.js"></script>
     <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
     <script src="https://fb.me/JSXTransformer-0.13.1.js"></script>
 <body class="container">
-<script data-main="../build/addPost.js" src='../bower_components/requirejs/require.js'></script>
+<script src="../build/addPost.js"</script>
+<script src="//cdn.ckeditor.com/4.4.7/standard/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace( 'editor1' );
+</script>
 </body>
+</html> -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>CKEditor</title>
+        <script src="//cdn.ckeditor.com/4.4.7/standard/ckeditor.js"></script>
+        <script src="//cdn.firebase.com/js/client/1.0.21/firebase.js"></script>
+        <script src="//cdn.firebase.com/libs/reactfire/0.3.0/reactfire.min.js"></script>
+        <script src='addPost.js'></script>
+        <script>
+
+          </script>
+
+    </head>
+    <body>
+      <div>
+       <form id='addPostForm' onSubmit='addPost(event)'>
+         <label>Heading</label>
+         <input id='heading'></input>
+           <br />
+
+         <label>Sub-Heading</label>
+         <input id='subHeading'></input>
+           <br />
+
+         <label>Body</label>
+         <textarea id='body' name="editor1"></textarea>
+         <script>
+             CKEDITOR.replace( 'editor1' );
+         </script>
+           <br />
+         <label>Add Image</label>
+         <input id='imageUrl'></input>
+         <input type="file" id="imageFile"></input>
+         <br />
+         <hr />
+        <input type='submit' name='Submit'></input>
+       </form>
+    </div>
+    </body>
 </html>

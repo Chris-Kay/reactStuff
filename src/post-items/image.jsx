@@ -3,7 +3,7 @@ define(function () {
       render: function () {
           return (
               <div className='centered-image'>
-                  <img src={this.props.image.figure} width='400px' />
+                  <img src={this.props.image} width='400px' />
               </div>
           )
       }

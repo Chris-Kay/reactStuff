@@ -16,7 +16,7 @@ define(function (require) {
                             )
                 }
 
-                if (this.props.post.image && this.props.post.image.figure) {
+                if (this.props.post.image) {
                     imageComponment =
                         React.createElement(Image, {
                             image: this.props.post.image}

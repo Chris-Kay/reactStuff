@@ -3,8 +3,8 @@ define (function() {
       render: function () {
           return (
               <div>
-                  <h1>{this.props.heading}</h1>
-                  <h2>{this.props.subHeading}</h2>
+                  <h2>{this.props.heading}</h2>
+                  <h3>{this.props.subHeading}</h3>
               </div>
           );
       }

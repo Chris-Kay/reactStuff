@@ -3,8 +3,8 @@ define (function() {
       render: function () {
           return (
               React.createElement("div", null, 
-                  React.createElement("h1", null, this.props.heading), 
-                  React.createElement("h2", null, this.props.subHeading)
+                  React.createElement("h2", null, this.props.heading), 
+                  React.createElement("h3", null, this.props.subHeading)
               )
           );
       }

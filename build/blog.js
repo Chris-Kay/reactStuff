@@ -30,5 +30,5 @@ require(['../react.min', 'posts' ], function (React, Posts) {
                  )
              }
          })
-         React.render(React.createElement(App, null), document.body);
+         React.render(React.createElement(App, null), document.getElementById('blog'));
   });

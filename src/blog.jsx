@@ -4,7 +4,6 @@ require(['../react.min', 'posts' ], function (React, Posts) {
 
         mixins: [ReactFireMixin],
         deletePerson: function (post) {
-          console.log(post.id);
         var selctedItem = new Firebase('https://brilliant-inferno-9224.firebaseio.com/' + post.id);
         selctedItem.remove();
 
@@ -22,7 +21,7 @@ require(['../react.min', 'posts' ], function (React, Posts) {
                  var that = this;
                  return (
                      <div>
-                         {this.state.blogData.map(function(post) {
+                         {this.state.blogData.reverse().map(function(post) {
                              return (
                                  <Posts onClick={that.deletePerson.bind(null, post)} post={post}></Posts>
                              )
